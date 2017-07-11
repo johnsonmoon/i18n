@@ -8,6 +8,10 @@ import xuyihao.i18n.exception.I18nException;
  * Created by xuyh at 2017年7月11日 下午3:33:37.
  */
 public class I18nInit {
+	public static I18nInit getInstance(String defaultLanguage, String languageResourceFilePath) {
+		return new I18nInit(defaultLanguage, languageResourceFilePath);
+	}
+
 	private String defaultLanguage;
 	private String languageResourceFilePath;
 
