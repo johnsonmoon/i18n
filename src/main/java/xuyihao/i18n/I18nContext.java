@@ -1,7 +1,5 @@
 package xuyihao.i18n;
 
-import java.util.Locale;
-
 /**
  * 国际化信息上下文
  * 
@@ -11,34 +9,25 @@ public class I18nContext {
 	/**
 	 * 语言
 	 */
-	private String language;
+	private static String language;
 	/**
 	 * 地区
 	 */
-	private String region;
+	private static String region;
 
-	public String getLanguage() {
+	public static String getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
+	public static void setLanguage(String language) {
+		I18nContext.language = language;
 	}
 
-	public String getRegion() {
+	public static String getRegion() {
 		return region;
 	}
 
-	public void setRegion(String region) {
-		this.region = region;
-	}
-
-	/**
-	 * 返回本地化对象，当语言或地区不合法时将抛出异常： {@link java.util.IllformedLocaleException } 。
-	 *
-	 * @return Locale 对象
-	 */
-	public Locale getLocale() {
-		return new Locale.Builder().setLanguage(language).setRegion(region).build();
+	public static void setRegion(String region) {
+		I18nContext.region = region;
 	}
 }
