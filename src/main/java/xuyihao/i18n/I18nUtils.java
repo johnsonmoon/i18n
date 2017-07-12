@@ -1,5 +1,7 @@
 package xuyihao.i18n;
 
+import java.util.List;
+
 import xuyihao.i18n.entity.Constances;
 import xuyihao.i18n.entity.I18nObjectsHolder;
 import xuyihao.i18n.exception.I18nException;
@@ -47,5 +49,24 @@ public class I18nUtils {
 	 */
 	public static String getMessage(String language, String code, Object... args) {
 		return I18nObjectsHolder.getMessage(language, code, args);
+	}
+
+	/**
+	 * 获取已有的语言列表
+	 * 
+	 * @return
+	 */
+	public static List<String> getLanguages() {
+		return I18nObjectsHolder.getlanguages();
+	}
+
+	/**
+	 * 是否支持此语言
+	 * 
+	 * @param language
+	 * @return
+	 */
+	public static boolean hasLanguage(String language) {
+		return I18nObjectsHolder.getlanguages().contains(language);
 	}
 }

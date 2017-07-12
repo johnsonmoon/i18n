@@ -19,5 +19,12 @@ public class I18nUtilsTest {
 		System.out.println(I18nUtils.getDefaultLanguage());
 		System.out.println(I18nUtils.getMessage("zh_CN", "xuyihao.test.hello.people", "Johnson"));
 		System.out.println(I18nUtils.getMessage("en_US", "xuyihao.test.hello.people", "Johnson"));
+
+		String has = "";
+		for (String lang : I18nUtils.getLanguages()) {
+			has += (lang + "  ");
+		}
+		System.out.println(has);
+		System.out.println(I18nUtils.hasLanguage("en_US"));
 	}
 }

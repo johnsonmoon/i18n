@@ -1,5 +1,6 @@
 package xuyihao.i18n.entity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +40,15 @@ public class I18nObjectsHolder {
 	 */
 	public static String getMessage(String language, String code, Object... args) {
 		return String.format(i18nObjectsMapCache.get(language).getMessage(code), args);
+	}
+
+	/**
+	 * 获取已有的语言
+	 * 
+	 * @return
+	 */
+	public static List<String> getlanguages() {
+		return new ArrayList<String>(i18nObjectsMapCache.keySet());
 	}
 
 	/**
