@@ -36,6 +36,10 @@ public class I18nUtils {
 	 * @return
 	 */
 	public static String getMessage(String language, String code) {
+		if (language == null || language.isEmpty())
+			language = defaultLanguage;
+		if (!hasLanguage(language))
+			language = defaultLanguage;
 		return I18nObjectsHolder.getMessage(language, code);
 	}
 
@@ -48,6 +52,10 @@ public class I18nUtils {
 	 * @return
 	 */
 	public static String getMessage(String language, String code, Object... args) {
+		if (language == null || language.isEmpty())
+			language = defaultLanguage;
+		if (!hasLanguage(language))
+			language = defaultLanguage;
 		return I18nObjectsHolder.getMessage(language, code, args);
 	}
 

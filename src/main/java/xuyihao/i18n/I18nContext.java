@@ -16,6 +16,10 @@ public class I18nContext {
 	private static String region;
 
 	public static String getLanguage() {
+		if (language == null || language.isEmpty())
+			return I18nUtils.getDefaultLanguage();
+		if (!I18nUtils.hasLanguage(language))
+			return I18nUtils.getDefaultLanguage();
 		return language;
 	}
 
