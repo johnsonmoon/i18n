@@ -1,10 +1,10 @@
-package test.xuyihao.i18n;
+package com.github.johnsonmoon.i18n;
 
 import org.junit.Test;
 
-import xuyihao.i18n.I18nInit;
-import xuyihao.i18n.I18nUtils;
-import xuyihao.i18n.exception.I18nException;
+import com.github.johnsonmoon.i18n.I18nInit;
+import com.github.johnsonmoon.i18n.I18nUtils;
+import com.github.johnsonmoon.i18n.exception.I18nException;
 
 import java.io.File;
 
@@ -17,8 +17,8 @@ public class I18nUtilsTest {
 		String path = System.getProperty("user.dir") + File.separator + "src\\test\\resources\\conf\\i18n";
 		new I18nInit("zh_CN", path).init();
 		System.out.println(I18nUtils.getDefaultLanguage());
-		System.out.println(I18nUtils.getMessage("zh_CN", "xuyihao.test.hello.people", "Johnson"));
-		System.out.println(I18nUtils.getMessage("en_US", "xuyihao.test.hello.people", "Johnson"));
+		System.out.println(I18nUtils.getMessage("zh_CN", "test.hello.people", "Johnson"));
+		System.out.println(I18nUtils.getMessage("en_US", "test.hello.people", "Johnson"));
 
 		String has = "";
 		for (String lang : I18nUtils.getLanguages()) {

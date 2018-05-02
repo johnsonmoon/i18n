@@ -1,59 +1,54 @@
-package xuyihao.i18n.entity;
+package com.github.johnsonmoon.i18n.entity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import xuyihao.i18n.exception.I18nException;
-import xuyihao.i18n.utils.SourceFileReader;
+import com.github.johnsonmoon.i18n.exception.I18nException;
+import com.github.johnsonmoon.i18n.utils.SourceFileReader;
 
 /**
- * 国际化消息缓存
- * 
+ * Cache for i18n messages
+ * <p>
  * Created by xuyh at 2017/7/11 14:41.
  */
 public class I18nObjectsHolder {
 	/**
-	 * 国际化消息本地缓存
+	 * Cache
 	 */
 	private static Map<String, I18nObjects> i18nObjectsMapCache = new HashMap<>();
 
 	/**
-	 * 获取对应语言对应编码的消息
-	 * 
-	 * @param language 语言
-	 * @param code 消息编码
-	 * @return
+	 * Get value of message code in language
+	 *
+	 * @param language language
+	 * @param code     message code
 	 */
 	public static String getMessage(String language, String code) {
 		return i18nObjectsMapCache.get(language).getMessage(code);
 	}
 
 	/**
-	 * 获取格式化后的对应语言对应编码的消息
-	 * 
-	 * @param language 语言
-	 * @param code 消息编码
-	 * @param args 格式化子串
-	 * @return
+	 * Get formatted value of message code in language
+	 *
+	 * @param language language
+	 * @param code     message code
+	 * @param args     format values
 	 */
 	public static String getMessage(String language, String code, Object... args) {
 		return String.format(i18nObjectsMapCache.get(language).getMessage(code), args);
 	}
 
 	/**
-	 * 获取已有的语言
-	 * 
-	 * @return
+	 * get languages that already exist
 	 */
-	public static List<String> getlanguages() {
+	public static List<String> getLanguages() {
 		return new ArrayList<String>(i18nObjectsMapCache.keySet());
 	}
 
 	/**
-	 * 初始化消息资源至本地缓存
-	 * @throws I18nException 
+	 * initialize language code-value into Cache
 	 */
 	public static void initObjects() throws I18nException {
 		String sourcesFilePath = System.getProperty(Constances.I18N_SOURCES_FILE_PATH);

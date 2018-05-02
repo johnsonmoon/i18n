@@ -1,4 +1,4 @@
-package xuyihao.i18n.utils;
+package com.github.johnsonmoon.i18n.utils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,25 +11,19 @@ import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import xuyihao.i18n.entity.I18nObjects;
-import xuyihao.i18n.exception.I18nException;
+import com.github.johnsonmoon.i18n.entity.I18nObjects;
+import com.github.johnsonmoon.i18n.exception.I18nException;
 
 /**
- * 多语言资源文件读取工具
- * 
+ * I18n message code-value resource file reader.
+ * <p>
  * Created by xuyh at 2017/7/11 14:25.
  */
 public class SourceFileReader {
-	/**
-	 * 语言消息资源文件名格式
-	 */
 	private static final Pattern sourceFilePattern = Pattern.compile(".*-(.*)\\.properties");
 
 	/**
-	 * 读取多语言资源配置文件中的内容
-	 * 
-	 * @param filePath
-	 * @return
+	 * read source file content
 	 */
 	public static List<I18nObjects> readSourceFiles(String filePath) throws I18nException {
 		List<I18nObjects> i18nObjectsList = new ArrayList<>();
@@ -55,11 +49,7 @@ public class SourceFileReader {
 	}
 
 	/**
-	 * 获取路径下符合条件的文件列表
-	 * 
-	 * @param dir
-	 * @return
-	 * @throws I18nException
+	 * Get files that matches multi conditions in directory.
 	 */
 	private static List<File> listByFileDir(File dir) throws I18nException {
 		if (dir == null) {
@@ -85,11 +75,7 @@ public class SourceFileReader {
 	}
 
 	/**
-	 * 读取资源文件
-	 * 
-	 * @param file
-	 * @return
-	 * @throws I18nException 
+	 * Read resource file.
 	 */
 	private static I18nObjects read(File file) throws I18nException {
 		if (file == null) {
@@ -111,10 +97,7 @@ public class SourceFileReader {
 	}
 
 	/**
-	 * 以properties格式读取内容(以UTF-8编码)
-	 * 
-	 * @param file
-	 * @return
+	 * read file in properties format with charset "utf-8"
 	 */
 	private static Properties readContent(File file) throws I18nException {
 		Properties properties = new Properties();
@@ -129,10 +112,7 @@ public class SourceFileReader {
 	}
 
 	/**
-	 * 获取资源文件对应的语言
-	 * 
-	 * @param file
-	 * @return
+	 * Get language of a resource file.
 	 */
 	private static String retrieveLang(File file) {
 		Matcher match = sourceFilePattern.matcher(file.getPath());

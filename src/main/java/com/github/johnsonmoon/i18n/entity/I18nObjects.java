@@ -1,20 +1,20 @@
-package xuyihao.i18n.entity;
+package com.github.johnsonmoon.i18n.entity;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 储存语言键值对对象
+ * Language, code-value objects storage.
  *
  * Created by xuyh at 2017/7/11 14:22.
  */
 public class I18nObjects {
 	/**
-	 * 语言
+	 * Language
 	 */
 	private String language;
 	/**
-	 * 消息code-value键值对
+	 * code-value map
 	 */
 	private Map<String, String> messages;
 

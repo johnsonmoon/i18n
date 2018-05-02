@@ -8,6 +8,7 @@
 
 ## 依赖环境
 （1）java8
+
 （2）maven
 
 ## 导入工程
@@ -25,7 +26,7 @@
 ```
 <dependencies>
     <dependency>
-		<groupId>xuyihao</groupId>
+		<groupId>com.github.johnsonmoon</groupId>
 		<artifactId>i18n</artifactId>
 		<version>1.0</version>
 		<scope>system</scope>
@@ -56,7 +57,7 @@ public static void main(String[] args) throws I18nException {
 app-context.xml:
 
 ```
-<bean id="i18nInit" class="xuyihao.i18n.I18nInit" init-method="init">
+<bean id="i18nInit" class="I18nInit" init-method="init">
 	<constructor-arg name="defaultLanguage" type="java.lang.String"
 		value="${i18n.default.language}" />
 	<constructor-arg name="languageResourceFilePath" type="java.lang.String"
@@ -70,16 +71,16 @@ app-context.xml:
 （2）配置文件中添加key=value形式的语言编码=值 键值对，例如如下
 
 ```
-xuyihao.test.hello=hello!
-xuyihao.test.hello.people=hello, %s!
+test.hello=hello!
+test.hello.people=hello, %s!
 ```
 
 ### 3.通过key获取相应语言的消息
 通过I18nUtils类的静态方法getMessage即可获取配置的消息，如下：
 
 ```
-System.out.println(I18nUtils.getMessage("en_US", "xuyihao.test.hello"));
-System.out.println(I18nUtils.getMessage("en_US", "xuyihao.test.hello.people", "Johnson"));
+System.out.println(I18nUtils.getMessage("en_US", "test.hello"));
+System.out.println(I18nUtils.getMessage("en_US", "test.hello.people", "Johnson"));
 ```
 
 执行结果如下：

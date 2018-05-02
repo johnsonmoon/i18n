@@ -1,10 +1,10 @@
-package test.xuyihao.i18n;
+package com.github.johnsonmoon.i18n;
 
 import org.junit.Test;
 
-import xuyihao.i18n.entity.Constances;
-import xuyihao.i18n.entity.I18nObjectsHolder;
-import xuyihao.i18n.exception.I18nException;
+import com.github.johnsonmoon.i18n.entity.Constances;
+import com.github.johnsonmoon.i18n.entity.I18nObjectsHolder;
+import com.github.johnsonmoon.i18n.exception.I18nException;
 
 import java.io.File;
 
@@ -18,8 +18,8 @@ public class I18nObjectsHolderTest {
 
 		System.setProperty(Constances.I18N_SOURCES_FILE_PATH, path);
 		I18nObjectsHolder.initObjects();
-		String hello_CN = I18nObjectsHolder.getMessage("zh_CN", "xuyihao.test.hello");
-		String hello_US = I18nObjectsHolder.getMessage("en_US", "xuyihao.test.hello");
+		String hello_CN = I18nObjectsHolder.getMessage("zh_CN", "test.hello");
+		String hello_US = I18nObjectsHolder.getMessage("en_US", "test.hello");
 		System.out.println(hello_CN);
 		System.out.println(hello_US);
 	}

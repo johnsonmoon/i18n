@@ -1,14 +1,14 @@
-package xuyihao.i18n;
+package com.github.johnsonmoon.i18n;
 
 import java.util.List;
 
-import xuyihao.i18n.entity.Constances;
-import xuyihao.i18n.entity.I18nObjectsHolder;
-import xuyihao.i18n.exception.I18nException;
+import com.github.johnsonmoon.i18n.entity.Constances;
+import com.github.johnsonmoon.i18n.entity.I18nObjectsHolder;
+import com.github.johnsonmoon.i18n.exception.I18nException;
 
 /**
- * 国际化工具
- *
+ * Utilities of i18n.
+ * <p>
  * Created by xuyh at 2017/7/11 14:16.
  */
 public class I18nUtils {
@@ -29,11 +29,10 @@ public class I18nUtils {
 	}
 
 	/**
-	 * 获取对应语言language对应消息编码code的消息
-	 * 
-	 * @param language
-	 * @param code
-	 * @return
+	 * Get i18n message by code in language.
+	 *
+	 * @param language language
+	 * @param code     message code
 	 */
 	public static String getMessage(String language, String code) {
 		if (language == null || language.isEmpty())
@@ -44,12 +43,11 @@ public class I18nUtils {
 	}
 
 	/**
-	 * 获取对应语言language对应消息编码code的消息
-	 * 
-	 * @param language
-	 * @param code
-	 * @param args
-	 * @return
+	 * Get i18n message by code in language with format.
+	 *
+	 * @param language language
+	 * @param code     message code
+	 * @param args     format args
 	 */
 	public static String getMessage(String language, String code, Object... args) {
 		if (language == null || language.isEmpty())
@@ -60,21 +58,18 @@ public class I18nUtils {
 	}
 
 	/**
-	 * 获取已有的语言列表
-	 * 
-	 * @return
+	 * Get languages that exist
 	 */
 	public static List<String> getLanguages() {
-		return I18nObjectsHolder.getlanguages();
+		return I18nObjectsHolder.getLanguages();
 	}
 
 	/**
-	 * 是否支持此语言
-	 * 
-	 * @param language
-	 * @return
+	 * Whether i18n framework support the given language.
+	 *
+	 * @param language language to check
 	 */
 	public static boolean hasLanguage(String language) {
-		return I18nObjectsHolder.getlanguages().contains(language);
+		return I18nObjectsHolder.getLanguages().contains(language);
 	}
 }

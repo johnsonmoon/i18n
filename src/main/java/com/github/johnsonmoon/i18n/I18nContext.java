@@ -1,17 +1,17 @@
-package xuyihao.i18n;
+package com.github.johnsonmoon.i18n;
 
 /**
- * 国际化信息上下文
- * 
+ * Context of i18n language.
+ * <p>
  * Created by xuyh at 2017/7/11 14:16.
  */
 public class I18nContext {
 	/**
-	 * 语言
+	 * Language
 	 */
 	private static String language;
 	/**
-	 * 地区
+	 * Region
 	 */
 	private static String region;
 

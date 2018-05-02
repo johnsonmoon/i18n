@@ -1,4 +1,4 @@
-package xuyihao.i18n.exception;
+package com.github.johnsonmoon.i18n.exception;
 
 /**
  * Created by xuyh at 2017/7/11 16:51.

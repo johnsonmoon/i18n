@@ -1,9 +1,9 @@
-package xuyihao.i18n;
+package com.github.johnsonmoon.i18n;
 
-import xuyihao.i18n.exception.I18nException;
+import com.github.johnsonmoon.i18n.exception.I18nException;
 
 /**
- * 多语言本地初始化(使用Spring即可)
+ * Initialization of i18n.
  * 
  * Created by xuyh at 2017年7月11日 下午3:33:37.
  */
